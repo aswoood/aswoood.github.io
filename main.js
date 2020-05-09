@@ -267,8 +267,8 @@ window.addEventListener('deviceorientation', function(event){
 	}
 	
 	if(window.orientation === 0) {
-		motion_initial.x = event.gamma - motion_initial.y;
-		motion_initial.y = event.beta - motion_initial.x;
+		motion.x = event.gamma - motion_initial.y;
+		motion.y = event.beta - motion_initial.x;
 	//potrait
 	} else if(window.orientation === 90) {
 		motion.x = event.beta - motion_initial.x;
