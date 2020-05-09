@@ -282,8 +282,31 @@ window.addEventListener('deviceorientation', function(event){
 		motion.x = -event.gamma + motion_initial.y; 
 		motion.y = -event.beta + motion_initial.x;
 	}
+	
+	
+	var max_offset = 23;
+    
+    // Check if magnitude of motion offset along X axis is greater than your max setting
+    if (Math.abs(motion.x) > max_offset) {
+    	// Check whether offset is positive or negative, and make sure to keep it that way
+    	if (motion.x < 0) {
+    		motion.x = -max_offset;
+    	} else {
+    		motion.x = max_offset;
+    	}
+    }
+    // Check if magnitude of motion offset along Y axis is greater than your max setting
+    if (Math.abs(motion.y) > max_offset) {
+    	// Check whether offset is positive or negative, and make sure to keep it that way
+    	if (motion.y < 0) {
+    		motion.y = -max_offset;
+    	} else {
+    		motion.y = max_offset;
+		}
 	//upside down
 });
+
+
 	
 window.addEventListener('orientationchange', function(event) {
 motion_initial.x = 0;
