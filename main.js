@@ -303,6 +303,7 @@ window.addEventListener('deviceorientation', function(event){
     	} else {
     		motion.y = max_offset;
 		}
+	}
 	//upside down
 });
 
